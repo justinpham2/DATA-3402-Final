@@ -65,14 +65,14 @@ Spaceship-titanic.ipynb
 
 ### Software Setup
 
-import numpy as np 
-import pandas as pd 
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import roc_auc_score,accuracy_score
-from sklearn.neighbors import LocalOutlierFactor
-from sklearn.model_selection import train_test_split
+numpy as np 
+pandas as pd 
+matplotlib.pyplot as plt
+seaborn as sns
+sklearn.linear_model import LogisticRegression
+sklearn.metrics import roc_auc_score,accuracy_score
+sklearn.neighbors import LocalOutlierFactor
+sklearn.model_selection import train_test_split
 
 ### Data
 
