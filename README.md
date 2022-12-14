@@ -9,8 +9,8 @@
 
 * This section could contain a short paragraph which include the following:
   * **Definition of the tasks / challenge**  Task: The task, as defined by the Kaggle challenge is to predict which passengers were transported by the anomaly using records recovered from the spaceship’s damaged computer system.
-  * **Your approach** Approach: The approach in this repository formulates the problem as regression task, using deep recurrent neural networks as the model with the full time series of features as input. 
-  * **Summary of the performance achieved** Ex: Our best model was able to predict the next day stock price within 23%, 90% of the time. At the time of writing, the best performance on Kaggle of this metric is 18%.
+  * **Your approach** Approach: The approach in this repository formulates the problem as logistic regression task, using deep recurrent neural networks as the model with the full time series of features as input. 
+  * **Summary of the performance achieved** Ex: Training did not work. 
 
 ## Summary of Workdone
 
@@ -19,46 +19,36 @@ Include only the sections that are relevant an appropriate.
 ### Data
 
 * Data:
-  * Type: For example
-    * Input: medical images (1000x1000 pixel jpegs), CSV file: image filename -> diagnosis
-    * Input: CSV file of features, output: signal/background flag in 1st column.
-  * Size: How much data?
-  * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
+![image](https://user-images.githubusercontent.com/98443119/207671719-e1d2a7b5-419f-4bdf-9212-72922485266f.png)
+
+
+  4677 for testing, 8694 for training, none for validation
 
 #### Preprocessing / Clean up
 
-* Describe any manipulations you performed to the data.
-
-#### Data Visualization
-
-Show a few visualization of the data and say a few words about what you see.
+* To clean up:
+* Checked for missing values
+* Checked for duplicated values
+* Concatenated the data
 
 ### Problem Formulation
 
-* Define:
-  * Input / Output
-  * Models
-    * Describe the different models you tried and why.
-  * Loss, Optimizer, other Hyperparameters.
+  * The input is transported the output is True/False
+  * Logistic regression because it is trying to determine 'Transported'
+  * Loss: binary_crossentropy, Optimizer: Rmsprop, Metrics: accuracy
 
 ### Training
-
-* Describe the training:
-  * How you trained: software and hardware.
-  * How did training take.
-  * Training curves (loss vs epoch for test/train).
-  * How did you decide to stop training.
-  * Any difficulties? How did you resolve them?
-
+I used keras deep learning
+Hardware failed
+Used two layers
+Used relu for activation
 ### Performance Comparison
 
-* Clearly define the key performance metric(s).
-* Show/compare results in one table.
-* Show one (or few) visualization(s) of results, for example ROC curves.
+N/A
 
 ### Conclusions
 
-* State any conclusions you can infer from your work. Example: LSTM work better than GRU.
+* Try other methods before deep learning.
 
 ### Future Work
 
@@ -67,51 +57,39 @@ Show a few visualization of the data and say a few words about what you see.
 
 ## How to reproduce results
 
-* In this section, provide instructions at least one of the following:
-   * Reproduce your results fully, including training.
-   * Apply this package to other data. For example, how to use the model you trained.
-   * Use this package to perform their own study.
-* Also describe what resources to use for this package, if appropirate. For example, point them to Collab and TPUs.
+You could apply this method/package to medical datasets. 
 
 ### Overview of files in repository
 
-* Describe the directory structure, if any.
-* List all relavent files and describe their role in the package.
-* An example:
-  * utils.py: various functions that are used in cleaning and visualizing data.
-  * preprocess.ipynb: Takes input data in CSV and writes out data frame after cleanup.
-  * visualization.ipynb: Creates various visualizations of the data.
-  * models.py: Contains functions that build the various models.
-  * training-model-1.ipynb: Trains the first model and saves model during training.
-  * training-model-2.ipynb: Trains the second model and saves model during training.
-  * training-model-3.ipynb: Trains the third model and saves model during training.
-  * performance.ipynb: loads multiple trained models and compares results.
-  * inference.ipynb: loads a trained model and applies it to test data to create kaggle submission.
-
-* Note that all of these notebooks should contain enough text for someone to understand what is happening.
+Spaceship-titanic.ipynb
 
 ### Software Setup
-* List all of the required packages.
-* If not standard, provide or point to instruction for installing the packages.
-* Describe how to install your package.
+
+import numpy as np 
+import pandas as pd 
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_auc_score,accuracy_score
+from sklearn.neighbors import LocalOutlierFactor
+from sklearn.model_selection import train_test_split
 
 ### Data
 
-* Point to where they can download the data.
-* Lead them through preprocessing steps, if necessary.
+Data can be found in kaggle link. 
 
 ### Training
 
-* Describe how to train the model
+Use kera's and try applying different layers. 
 
 #### Performance Evaluation
 
-* Describe how to run the performance evaluation.
+*N/A
 
 
 ## Citations
-
-* Provide any references.
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
 
 
 
