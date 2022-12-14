@@ -9,7 +9,7 @@
 
 * This section could contain a short paragraph which include the following:
   * **Definition of the tasks / challenge**  Task: The task, as defined by the Kaggle challenge is to predict which passengers were transported by the anomaly using records recovered from the spaceship’s damaged computer system.
-  * **Your approach** Approach: The approach in this repository formulates the problem as logistic regression task, using deep recurrent neural networks as the model with the full time series of features as input. 
+  * **Your approach** Approach: The approach in this repository formulates the problem as logistic regression task, using deep recurrent neural networks as the model. 
   * **Summary of the performance achieved** Ex: Training did not work. 
 
 ## Summary of Workdone
